@@ -2,6 +2,7 @@ extends Area2D
 
 @export var Speed = 400
 
+
 func _process(delta):
 	var velocity = Vector2.ZERO
 
@@ -17,3 +18,6 @@ func _process(delta):
 		velocity = velocity.normalized()*Speed
 		
 	position += velocity * delta
+
+func _on_body_entered(body):
+	hide()
